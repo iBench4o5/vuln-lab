@@ -1,0 +1,13 @@
+<% layout('layout') %>
+<h2>Attacker</h2>
+
+<p>Ovo je “napadačeva” stranica za CSRF. Kad si logiran u aplikaciji, klikni gumb ispod.
+Ako je CSRF VULNERABLE, bez ikakvog tokena promijenit će ti email na <code><%= maliciousEmail %></code>.
+Ako je SAFE, dobit ćeš 403 i promjena neće proći.</p>
+
+<p><strong>Meta endpoint:</strong> <code><%= action %></code></p>
+
+<p><a class="button" target="_blank" href="<%= dataUrl %>">Open external attacker page</a></p>
+
+
+<p class="note">Tehnički: ovo otvara <code>data:</code> URL (druga origin politika), koji <em>POST</em>-a formu na aplikaciju.</p>
