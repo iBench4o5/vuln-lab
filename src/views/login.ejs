@@ -1,0 +1,17 @@
+<% layout('layout') %>
+<h2>Login</h2>
+<form method="POST" action="/login" class="card">
+  <label>Username <input name="username" placeholder="alice or bob"></label>
+  <label>Password <input name="password" placeholder="password123 or secret"></label>
+  <button>Login</button>
+</form>
+
+<div class="note">
+  <p><strong>SQLi demo:</strong> Ako je SQLi VULNERABLE, probaj:</p>
+  <ul>
+    <li>username: bilo što što ne postoji</li>
+    <li>password: <code><%= helpExample %></code></li>
+  </ul>
+  <p>Očekivano: logirat će te jer je upit razbijen tautologijom.</p>
+  <p>Kad isključiš ranjivost (SAFE), ovo više ne prolazi.</p>
+</div>

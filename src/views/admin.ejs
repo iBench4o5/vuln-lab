@@ -1,0 +1,17 @@
+<% layout('layout') %>
+<h2>Admin: Toggles</h2>
+<form method="POST" action="/admin/toggles" class="card">
+  <label>
+    <input type="checkbox" name="sqliVulnerable" <%= toggles.sqliVulnerable ? 'checked' : '' %> >
+    SQL Injection VULNERABLE (ON = nesigurno)
+  </label>
+
+  <label>
+    <input type="checkbox" name="csrfVulnerable" <%= toggles.csrfVulnerable ? 'checked' : '' %> >
+    CSRF VULNERABLE (ON = nesigurno)
+  </label>
+
+  <button>Spremi</button>
+</form>
+
+<p>Preporuka: drži ih posebno ON/OFF i testiraj napade.</p>

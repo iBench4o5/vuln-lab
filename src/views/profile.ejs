@@ -1,0 +1,17 @@
+<% layout('layout') %>
+<h2>Profile</h2>
+
+<form method="POST" action="/profile/email" class="card">
+  <label>Novi e-mail
+    <input type="email" name="email" placeholder="new@example.com">
+  </label>
+
+  <% if (csrfToken) { %>
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <p class="safe">CSRF token je aktivan (SAFE).</p>
+  <% } else { %>
+    <p class="warn">CSRF zaštita ISKLJUČENA (VULNERABLE) — napad će proći.</p>
+  <% } %>
+
+  <button>Spremi</button>
+</form>

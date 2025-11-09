@@ -1,0 +1,7 @@
+<% layout('layout') %>
+<h1>Vulnerability Lab (SQLi + CSRF)</h1>
+<p>Uključi/isključi ranjivosti na <a href="/admin">Admin</a> i vidi ponašanje.</p>
+<ul>
+  <li><strong>SQL Injection (tautology)</strong>: pokušaš login sa korisnikom koji ne postoji i password npr. <code>' OR '1'='1</code></li>
+  <li><strong>CSRF</strong>: kad si logiran, otvori <a href="/attacker">Attacker</a> i pokreni “external” napad.</li>
+</ul>
