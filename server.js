@@ -97,11 +97,12 @@ app.get('/admin', (req, res) => {
   res.render('admin');
 });
 
-app.post('/admin/toggles', (req, res) => {
-  toggles.sqliVulnerable = !!req.body.sqliVulnerable;
-  toggles.csrfVulnerable = !!req.body.csrfVulnerable;
+app.get('/admin/toggles', (req, res) => {
+  toggles.sqliVulnerable = !!req.query.sqliVulnerable;
+  toggles.csrfVulnerable = !!req.query.csrfVulnerable;
   res.redirect('/admin');
 });
+
 
 // Login demo (SQLi)
 app.get('/login', (req, res) => {

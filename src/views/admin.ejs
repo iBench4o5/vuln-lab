@@ -1,6 +1,6 @@
 <% layout('layout') %>
 <h2>Admin: Toggles</h2>
-<form method="POST" action="/admin/toggles" class="card">
+<form method="GET" action="/admin/toggles" class="card">
   <label>
     <input type="checkbox" name="sqliVulnerable" <%= toggles.sqliVulnerable ? 'checked' : '' %> >
     SQL Injection VULNERABLE (ON = nesigurno)
